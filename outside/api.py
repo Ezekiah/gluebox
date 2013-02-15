@@ -99,7 +99,8 @@ def subscribers(request):
 		
 		
 		
-		form_datas2 = {'1. Prenom' : form.cleaned_data['first_name'],
+		form_datas2 = {
+				'1. Prenom' : form.cleaned_data['first_name'],
 				'2. nom' : form.cleaned_data['last_name'],
 				'3. email' : form.cleaned_data['email'],
 				'4. affiliation' : form.cleaned_data['affiliation'],
