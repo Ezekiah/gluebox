@@ -13,7 +13,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/datas/www/quali2/sqlite/quali2.db',                      # Or path to database file if using sqlite3.
+        'NAME': '/datas/www/archipolis/sqlite/archipolis.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -29,9 +29,11 @@ TIME_ZONE = 'Europe/Paris'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-#LANGUAGE_CODE = 'en-us'
-
 LANGUAGE_CODE = 'fr'
+
+LOCALE_PATHS = (
+    '/datas/www/archipolis/locale',
+)
 
 SITE_ID = 1
 
@@ -48,7 +50,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/datas/www/quali2/media/'
+MEDIA_ROOT = '/datas/www/archipolis/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -63,7 +65,7 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/quali2/static/'
+STATIC_URL = '/archipolis/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -96,7 +98,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.locale.LocaleMiddleware'
+    'django.middleware.locale.LocaleMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -107,7 +109,7 @@ ROOT_URLCONF = 'gluebox.urls'
 WSGI_APPLICATION = 'gluebox.wsgi.application'
 
 TEMPLATE_DIRS = (
-    '/datas/www/quali2/outside/templates/'
+    '/datas/www/archipolis/outside/templates/'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -122,6 +124,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'glue',
     'outside',
+    'hub', # n.b. bequali ONLY !
     'captcha',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
@@ -133,7 +136,6 @@ INSTALLED_APPS = (
 # Captcha - google.com/recaptcha
 RECAPTCHA_PUBLIC_KEY = '6Lfy9dsSAAAAAEaeHvXIqHSIWgRy0AOtYM7IIPqr'
 RECAPTCHA_PRIVATE_KEY = '6Lfy9dsSAAAAALKyXZsa_lAzavDaNzlewMAe1W-y'
-
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -170,6 +172,6 @@ LOGGING = {
 #    Outside specific settings
 #    =========================
 #
-OUTSIDE_SITE_NAME = "quali2"
+OUTSIDE_SITE_NAME = "archipolis"
 OUTSIDE_THEME = "bequali"
 OUTSIDE_TEMPLATE_DIR = "hub"
