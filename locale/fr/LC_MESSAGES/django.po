@@ -386,7 +386,7 @@ msgstr ""
 
 #: outside/templates/hub/contacts.html:64
 msgid "message sent"
-msgstr "message"
+msgstr "Message envoyé, vous allez recevoir un mail de confirmation"
 
 #: outside/templates/hub/middle.html:119
 msgid "actualités"

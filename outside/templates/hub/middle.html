@@ -227,91 +227,20 @@
 			<div id="footer-inner">
 				
 				
-				{% if site == 'bequali' %}
-				
-				<a href="http://sciences-po.fr" class="footer-link"><img src="{{ STATIC_URL }}img/scpo-blanc.png"/></a>
-				
-				
-				<a href="{% url outside_legal %}" class="footer-link">mentions légales</a>
-				<a href="{% url outside_contacts %}" class="footer-link">nous contacter</a>
-				
-				<a href="http://www.cnrs.fr/" class="footer-link"><img src="{{ STATIC_URL }}img/cnrs.png"/></a>
 
 				
-				{% elif site == 'archipolis' %}
-				 <!--   
-				 CDSP | ISP | CEE | CERAPS | PACTE
-				 
-				 TRIANGLE | CENTRE EMILE DURKHEIM
-				 -->
-				 
-				 <a href="http://sciences-po.fr" class="footer-link"><img src="{{ STATIC_URL }}img/scpo-blanc.png"/></a>
-				
-				 <a class="ircorpus-logo" href="http://www.corpus-ir.fr/"><img src="{{ STATIC_URL }}img/logohumanum.png"/></a>
-				
-				 
-				 <p style="float:right">
-					<a href="{% url outside_legal %}" class="footer-link">mentions légales</a>
-					<a href="{% url outside_contacts %}" class="footer-link">nous contacter</a>
-				 </p>
-
-				
-				
-				{% elif site == 'app' %}
-				
-				<!--	
-				SCIENCES PO | CNRS
-				
-				DIME-SHS
-				Investissement d'avenir
-				-->
-				
-				<a href="http://sciences-po.fr" class="footer-link"><img src="{{ STATIC_URL }}img/scpo-blanc.png"/></a>
-				<a href="http://www.cnrs.fr/" class="footer-link"><img src="{{ STATIC_URL }}img/logoCNRS.gif"/></a>
-				
-				<a href="{% url outside_legal %}" class="footer-link">mentions légales</a>
-				<a href="{% url outside_contacts %}" class="footer-link">nous contacter</a>
-				
-				<div style="align:right">
-					<ul>
-						<li><a href="">DIME-SHS</a></li>
-						<li><a href="">Investissement d'avenir</a></li>
-						<li><a href="">Pres</a></li>
-					</ul>
-				</div>
-				{% elif site == 'quali2' %}
-					
-				
-				
-				
-				
-				{% elif site == 'reanalyse' %}
-				
-				<a href="http://sciences-po.fr" class="footer-link"><img src="{{ STATIC_URL }}img/scpo-blanc.png"/></a>
-				<a href="http://www.cnrs.fr/" class="footer-link"><img src="{{ STATIC_URL }}img/cnrs.png"/></a>
-				
-
-				 <a href="http://cdsp.sciences-po.fr/" class="footer-link">CDSP</a>
-				 <a href="http://www.isp.cnrs.fr/" class="footer-link">CNRS isp</a>
-				
-				<a href="http://triangle.ens-lyon.fr/" class="footer-link">Triangle</a>
-				<a href="http://www.pacte-grenoble.fr/" class="footer-link">Pacte-Grenoble</a>
-				
-				<a href="" class="footer-link">ispole</a>
-				<a href="http://france.edf.com/france-45634.html" class="footer-link">EDF</a>
-				
-				
-				
-				<a href="{% url outside_contacts %}" class="footer-link right" style="margin-right:18px">nous contacter</a>
 							
-				<a href="{% url outside_legal %}" class="footer-link right">mentions légales</a>
-								
-				{% else %}
-				   
+				<a href="http://sciences-po.fr" class="footer-link"><img src="{{ STATIC_URL }}img/scpo-blanc.png"/></a>
+				<a href="http://www.cnrs.fr/" class="footer-link"><img src="{{ STATIC_URL }}img/cnrs.png"/></a>
 				
-				{% endif %}
-
-
+				
+				<div style="float:right">
+					<a href="{% url outside_contacts %}" class="footer-link">nous contacter</a>
+					<a href="{% url outside_legal %}" class="footer-link">mentions légales</a>
+					<a href="http://investissement-avenir.gouvernement.fr/" class="footer-link"><img src="{{ STATIC_URL }}img/IA.png"/></a>
+				</div>
+				
+				
 				
 				{% comment %}
 				<ul>
