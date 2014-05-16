@@ -9,6 +9,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
 	url(r'^$', 'outside.views.index', name='outside_index'),
 	url(r'^glue/', include('glue.urls')),
+	url(r'^captcha/', include('captcha.urls')),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

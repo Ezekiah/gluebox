@@ -1,6 +1,6 @@
 from django import forms
 from outside.models import Subscriber
-from captcha.fields import ReCaptchaField
+from captcha.fields import *
 
 
 
@@ -12,7 +12,7 @@ class SubscriberForm (forms.Form):
     status = forms.CharField(max_length=3, widget=forms.Select(choices=Subscriber.STATUS_CHOICES))
     accepted_terms = forms.BooleanField()
     description = forms.CharField( widget=forms.Textarea) # personal description
-    captcha = ReCaptchaField(attrs={'theme':'clean'})
+    captcha = CaptchaField(required=False, )
     
 class LoginForm( forms.Form ):
 	username = forms.CharField( max_length=32, widget=forms.TextInput )
