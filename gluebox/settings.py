@@ -13,7 +13,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/datas/www/archipolis/sqlite/archipolis.db',                      # Or path to database file if using sqlite3.
+        'NAME': '/store/www/bequali/sqlite/bequali.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -32,7 +32,7 @@ TIME_ZONE = 'Europe/Paris'
 LANGUAGE_CODE = 'fr'
 
 LOCALE_PATHS = (
-    '/datas/www/archipolis/locale',
+    '/store/www/bequali/locale',
 )
 
 SITE_ID = 1
@@ -50,7 +50,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/datas/www/archipolis/media/'
+MEDIA_ROOT = '/datas/www/bequali/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -65,7 +65,7 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/archipolis/static/'
+STATIC_URL = '/bequali/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -109,7 +109,7 @@ ROOT_URLCONF = 'gluebox.urls'
 WSGI_APPLICATION = 'gluebox.wsgi.application'
 
 TEMPLATE_DIRS = (
-    '/datas/www/archipolis/outside/templates/'
+    '/datas/www/bequali/outside/templates/'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -124,7 +124,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'glue',
     'outside',
-    'hub', # n.b. bequali ONLY !
+    #'hub', # n.b. bequali ONLY !
     'captcha',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
@@ -172,6 +172,6 @@ LOGGING = {
 #    Outside specific settings
 #    =========================
 #
-OUTSIDE_SITE_NAME = "archipolis"
+OUTSIDE_SITE_NAME = "bequali"
 OUTSIDE_THEME = "bequali"
 OUTSIDE_TEMPLATE_DIR = "hub"
