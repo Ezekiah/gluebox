@@ -9,6 +9,6 @@
 *~
 *.wsgi
 settings.py
-
+static/img/spring.png
 .DS_Store
 .png
