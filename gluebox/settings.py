@@ -13,7 +13,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/store/www/bequali/sqlite/bequali.db',                      # Or path to database file if using sqlite3.
+        'NAME': DB_PATH,                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -31,9 +31,7 @@ TIME_ZONE = 'Europe/Paris'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'fr'
 
-LOCALE_PATHS = (
-    '/store/www/bequali/locale',
-)
+
 
 SITE_ID = 1
 
@@ -50,7 +48,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/datas/www/bequali/media/'
+MEDIA_ROOT = '/store/www/quali2/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -65,7 +63,7 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/bequali/static/'
+STATIC_URL = '/quali2/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -109,7 +107,7 @@ ROOT_URLCONF = 'gluebox.urls'
 WSGI_APPLICATION = 'gluebox.wsgi.application'
 
 TEMPLATE_DIRS = (
-    '/datas/www/bequali/outside/templates/'
+    '/store/www/quali2/outside/templates/'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -172,6 +170,6 @@ LOGGING = {
 #    Outside specific settings
 #    =========================
 #
-OUTSIDE_SITE_NAME = "bequali"
+OUTSIDE_SITE_NAME = "quali2"
 OUTSIDE_THEME = "bequali"
 OUTSIDE_TEMPLATE_DIR = "hub"
