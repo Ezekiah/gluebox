@@ -5,7 +5,7 @@ import os
 
 
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
-
+SITE_NAME = 'bequali'
 
 
 
@@ -25,13 +25,11 @@ ADMINS = (
 )
 
 
-
 STAFF_EMAIL = 'guillaume.garcia@sciences-po.fr'
 EMAIL_HOST = 'smtp.sciences-po.fr'
 EMAIL_PORT = 25
 
 EMAIL_ADMINS = ['alexandre.aazzouz@sciences-po.fr', 'sarah.cadorel@sciences-po.fr', 'guillaume.garcia@sciences-po.fr', 'sophie.duchesne@sciences-po.fr', 'anne.both@sciences-po.fr', 'genevieve.michaud@sciences-po.fr']
-
 
 
 MANAGERS = ADMINS
@@ -46,8 +44,6 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
-
-
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -140,6 +136,8 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
+
+CAPTCHA_FONT_SIZE = 50
 
 INSTALLED_APPS = (
     'django.contrib.auth',
