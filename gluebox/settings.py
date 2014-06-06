@@ -1,6 +1,22 @@
 # Django settings for gluebox project.
-
 from settingsprivate import * 
+import os
+
+
+
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+SITE_NAME = 'bequali'
+
+
+
+LOCALE_PATHS = (
+    os.path.join(SITE_ROOT, '../locale'),
+)
+
+
+DB_PATH = os.path.join(SITE_ROOT, '../sqlite/'+SITE_NAME+'.db')
+
+
 
 TEMPLATE_DEBUG = DEBUG
 
