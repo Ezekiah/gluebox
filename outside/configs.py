@@ -27,7 +27,7 @@ OUTSIDE_SITES_AVAILABLE = [
 	},
 	{
 		'name':'reanalyse',
-		'url':'/reanalyse' if settings.DEBUG == True else '/app',
+		'url':'/app' if settings.DEBUG == True else '/app',
 		'label':'enQ<span class="cyan">uêtes</span>',
 		'title':'l’instrument de DIME-SHS',
 		'content':'La banque d’enquêtes qualitatives',
