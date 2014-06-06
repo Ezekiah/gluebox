@@ -13,3 +13,4 @@ static/img/spring.png
 static/admin
 .DS_Store
 .png
+gluebox/settingsprivate.py
