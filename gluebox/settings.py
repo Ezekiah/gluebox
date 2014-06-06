@@ -48,7 +48,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/store/www/quali2/media/'
+MEDIA_ROOT = '/store/www/'+SITE_NAME+'/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -63,7 +63,7 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/quali2/static/'
+STATIC_URL = '/'+SITE_NAME+'/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -107,7 +107,7 @@ ROOT_URLCONF = 'gluebox.urls'
 WSGI_APPLICATION = 'gluebox.wsgi.application'
 
 TEMPLATE_DIRS = (
-    '/store/www/quali2/outside/templates/'
+    '/store/www/'+SITE_NAME+'/outside/templates/'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -170,6 +170,6 @@ LOGGING = {
 #    Outside specific settings
 #    =========================
 #
-OUTSIDE_SITE_NAME = "quali2"
+OUTSIDE_SITE_NAME = SITE_NAME
 OUTSIDE_THEME = "bequali"
 OUTSIDE_TEMPLATE_DIR = "hub"
