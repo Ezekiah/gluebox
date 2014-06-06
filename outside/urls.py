@@ -2,6 +2,7 @@ from django.conf.urls.defaults import patterns, include, url
 from django.conf import settings
 
 urlpatterns = patterns('',
+	
 	# url(r'^(?P<language>[a-z]{2})$','outside.views.index', name='outside_index'),
 	url(r'^$','outside.views.index', name='outside_index'),
 	url(r'^login/$','outside.views.login_view', name='outside_login'),
