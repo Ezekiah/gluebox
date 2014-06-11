@@ -7,6 +7,7 @@ import os
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 
+SESSION_COOKIE_NAME = SITE_NAME
 
 LOCALE_PATHS = (
     os.path.join(SITE_ROOT, '../locale'),
