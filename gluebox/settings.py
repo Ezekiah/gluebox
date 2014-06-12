@@ -4,17 +4,19 @@ import os
 
 
 
-SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+SITE_ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..'))
+
+
 
 
 SESSION_COOKIE_NAME = SITE_NAME
 
 LOCALE_PATHS = (
-    os.path.join(SITE_ROOT, '../locale'),
+    os.path.join(SITE_ROOT, 'locale'),
 )
 
 
-DB_PATH = os.path.join(SITE_ROOT, '../sqlite/'+SITE_NAME+'.db')
+DB_PATH = os.path.join(SITE_ROOT, 'sqlite/'+SITE_NAME+'.db')
 
 
 
@@ -75,7 +77,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/store/www/'+SITE_NAME+'/media/'
+MEDIA_ROOT = SITE_NAME+'/media/'
 
 
 
@@ -92,7 +94,8 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/'+SITE_NAME+'/static/'
+
+STATIC_URL = SITE_NAME+'/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -137,7 +140,8 @@ ROOT_URLCONF = 'gluebox.urls'
 WSGI_APPLICATION = 'gluebox.wsgi.application'
 
 TEMPLATE_DIRS = (
-    '/store/www/'+SITE_NAME+'/outside/templates/'
+    os.path.join(SITE_ROOT, '../outside/templates'),
+    #'/store/www/'+SITE_NAME+'/outside/templates/'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
