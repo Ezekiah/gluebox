@@ -45,16 +45,19 @@ oo.api.subscriber.add = function( params ){
 
 oo.subscriber.init = function(){
 	oo.log("[oo.subscriber.init]");
-	$("#add-subscriber").click( function(){oo.api.subscriber.add({
-		first_name:$("#id_subscriber_first_name").val(),
-		last_name:$("#id_subscriber_last_name").val(),
-		affiliation:$("#id_subscriber_affiliation").val(),
-		description:$("#id_subscriber_description").val(),
+	$("#add-subscriber, #edit-subscriber").click( function(){	oo.api.subscriber.add({
+		first_name:$("input[name=first_name]").val(),
+		last_name:$("input[name=last_name]").val(),
+		affiliation:$("input[name=affiliation]").val(),
+		description:$("textarea[name=description]").val(),
 		accepted_terms:$("#id_subscriber_accepted_terms").prop("checked"),
-		status:$("#id_subscriber_status").val(),
-		email:$("#id_subscriber_email").val(),
-		recaptcha_challenge_field:$('input[name=recaptcha_challenge_field]').val(),
-		recaptcha_response_field:$('input[name=recaptcha_response_field]').val(),
+		status:$('select[name=status]').val(),
+		email:$("input[name=email]").val(),
+		action:$("input[name=action]").val(),
+		captcha_0:$('input[name=captcha_0]').val(),
+		captcha_1:$('input[name=captcha_1]').val(),
 	})});
 	//$("").click()
 };
+
+

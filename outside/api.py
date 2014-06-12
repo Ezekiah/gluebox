@@ -20,7 +20,12 @@ from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
 from django.contrib.sites.models import get_current_site
 from django.utils.translation import ugettext as _
+from django.http import HttpResponse
 
+from captcha.models import CaptchaStore
+from captcha.helpers import captcha_image_url
+
+import json
 
 
 #
@@ -127,8 +132,9 @@ def subscribers(request):
 		
 		
 		response.add("object", m, jsonify=True )
-
-	return response.queryset( Subscriber.objects.filter() ).json()
+	
+	return Epoxy(request).json()
+	
 	
 
 def subscriber( request, subscriber_id ):
@@ -150,3 +156,26 @@ def login(request):
 	
 	return response.json()
 
+def captcha_refresh(request):
+	""" Return json with new captcha for ajax refresh request """
+	
+	new_key = CaptchaStore.generate_key()
+	to_json_response = {
+					'key': new_key,
+					'image_url': captcha_image_url(new_key),
+					}
+	return HttpResponse(json.dumps(to_json_response), content_type='application/json')
+
+
+def captcha(request):
+	# this compare captcha's number from POST and SESSION
+	if(request.method == 'POST' and request.POST['captcha'] is not None and request.POST['captcha'] == request.session['captcha']):
+		request.session['captcha'] = "success"# this line makes session free, we recommend you to keep it
+	
+	elif(request.method == 'POST' and request.POST['captcha'] is None):
+		return HttpResponse('failed', 'text')
+	
+	else:
+		rand = random.randint(0, 4)
+		request.session['captcha'] = rand
+		return HttpResponse(rand, 'text')

@@ -3,6 +3,11 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.i18n import i18n_patterns
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
+
+from django.conf.urls.static import static
+
+from django.conf import settings
+
 admin.autodiscover()
 
 
@@ -23,4 +28,4 @@ urlpatterns = patterns('',
     #url(r'^(?P<page_slug>[a-z0-9-]+)/$','hub.views.page', name='hub_page'),
     
     
-)
+) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

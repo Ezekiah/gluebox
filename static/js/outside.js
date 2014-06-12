@@ -20,6 +20,27 @@ oo.log = function(){
 }
 
 
+
+function captcha_refresh(){
+	$.ajax({
+		url: oo.urls.captcha_refresh,
+		dataType:'json',
+		cache:false
+	}).done(function(json) {
+		$('img.captcha').attr('src', json.image_url)// This your should update captcha image src and captcha hidden input
+   		$('input[name=captcha_0]').val(json.key)
+   		
+   		$('input[name=captcha_1]').val("")
+   		
+	});
+}
+
+$('.js-captcha-refresh').click(function(){
+    captcha_refresh();
+    return false;
+});
+
+
 /*
 
 
@@ -50,7 +71,8 @@ oo.api.process = function( result, callback, namespace ){
 	} else if( typeof result.error == "object" ){
 		oo.invalidate( result.error, namespace );
 		oo.toast(oo.i18n.translate("Please fill all mandatory fields, enter the captcha and check the terms") , oo.i18n.translate("error"), {stayTime:5000, cleanup: true});
-		Recaptcha.reload();
+		captcha_refresh();
+		
 		
 		
 		

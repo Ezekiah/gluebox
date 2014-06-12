@@ -40,10 +40,10 @@
 			<label for="recaptcha_response_field">{% trans "recaptcha"|capfirst %}
 				<div class="specification">{% trans "recaptcha description"|capfirst %}</div>
 			</label>
-			<br/>
+		
 			<br/>
 			{{ subscriber_form.captcha }}
-			
+			<button class='js-captcha-refresh'>Rafraichir le captcha</button>
 
 		
 			<label for="id_subscriber_accepted_terms">{% trans "legal notices"|capfirst %}
@@ -63,7 +63,8 @@
 	<div id="subscription-accepted" style="display:none">
 		<h2>{% trans "Merci !"%}</h2>
 
-		{% trans "message sent" %}
+		{% trans "Hello, your message has been sent, we will respond as soon as possible." %}
+		<br/>
 
 		<p>
 			<a href="{% url outside_index %}">{% trans "back to home page"%}</a>

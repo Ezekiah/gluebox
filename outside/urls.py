@@ -2,13 +2,14 @@ from django.conf.urls.defaults import patterns, include, url
 from django.conf import settings
 
 urlpatterns = patterns('',
-	
+	url(r'^captcha/', include('captcha.urls')),
 	# url(r'^(?P<language>[a-z]{2})$','outside.views.index', name='outside_index'),
 	url(r'^$','outside.views.index', name='outside_index'),
 	url(r'^login/$','outside.views.login_view', name='outside_login'),
 	url(r'^logout/$','outside.views.logout_view', name='outside_logout'),
 	url(r'^404/$','outside.views.notfound', name='outside_notfound'),
 	url(r'^download/(?P<pin_slug>[a-z0-9-_]+)/$','outside.views.download_view', name='outside_download'),
+	
 	
 	
 	
@@ -29,6 +30,9 @@ urlpatterns = patterns('',
 	
 	#login
 	url(r'^api/login/$', 'outside.api.login', name='outside_api_login'),
+	url(r'^api/captcha/$', 'outside.api.captcha', name='outside_captcha'),
+	url(r'^api/captcha_refresh/$', 'outside.api.captcha_refresh', name='api_captcha_refresh'),
+	
 
 	# url(r'^blog/$','outside.views.news', name='outside_news'), # a special page for blog posting with comments on page
 	url(r'^(?P<page_slug>[a-z0-9-]+)/$','outside.views.page', name='outside_page'),
