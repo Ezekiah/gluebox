@@ -115,7 +115,7 @@ msgstr ""
 
 #: hub/templates/hub/middle.html:24 outside/templates/hub/middle.html:24
 msgid "logout"
-msgstr ""
+msgstr "deconnexion"
 
 #: hub/templates/hub/middle.html:47 outside/templates/hub/middle.html:55
 #: outside/templates/outside/middle.html:189
