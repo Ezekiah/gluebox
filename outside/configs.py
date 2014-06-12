@@ -20,7 +20,7 @@ OUTSIDE_SITES_AVAILABLE = [
 		'name':'archipolis',
 		'url':'/archipolis',
 		'label':'archiP<span class="cyan">olis</span>',
-		'title':'le consortium IR Corpus',
+		'title':'Consortium de la TGIR  Huma-Num',
 		'content':'Archives des sciences sociales du politique',
 		'template':'hub',
 		'long_content': 'archiPolis est un consortium <a href="http://www.corpus-ir.fr/" target="_blank">IR Corpus</a> créé pour inventorier, sauver les enquêtes anciennes et organiser la collecte de celles en cours et à venir en sciences sociales du politique. Il a aussi pour objet de proposer une définition élargie et contextualisée de l’enquête et des solutions de conservation pérenne.  Pour plus d’information sur archiPolis, <a href="http://quali.dime-shs.sciences-po.fr/archipolis/">cliquez ici</a>. '
