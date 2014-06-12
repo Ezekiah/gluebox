@@ -29,7 +29,7 @@ STAFF_EMAIL = 'guillaume.garcia@sciences-po.fr'
 EMAIL_HOST = 'smtp.sciences-po.fr'
 EMAIL_PORT = 25
 
-EMAIL_ADMINS = ['alexandre.aazzouz@sciences-po.fr', 'sarah.cadorel@sciences-po.fr', 'guillaume.garcia@sciences-po.fr', 'sophie.duchesne@sciences-po.fr', 'anne.both@sciences-po.fr', 'genevieve.michaud@sciences-po.fr']
+EMAIL_ADMINS = ['alexandre.aazzouz@sciencespo.fr', 'sarah.cadorel@sciencespo.fr', 'guillaume.garcia@sciencespo.fr', 'emilie.groshens@sciencespo.fr', 'anne.both@sciencespo.fr', 'genevieve.michaud@sciencespo.fr']
 
 
 MANAGERS = ADMINS
