@@ -12,7 +12,7 @@ class SubscriberForm (forms.Form):
     status = forms.CharField(max_length=3, widget=forms.Select(choices=Subscriber.STATUS_CHOICES))
     accepted_terms = forms.BooleanField()
     description = forms.CharField( widget=forms.Textarea) # personal description
-    captcha = CaptchaField(required=False, )
+    captcha = CaptchaField(required=True, )
     
 class LoginForm( forms.Form ):
 	username = forms.CharField( max_length=32, widget=forms.TextInput )
