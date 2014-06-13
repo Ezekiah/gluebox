@@ -60,4 +60,8 @@ oo.subscriber.init = function(){
 	//$("").click()
 };
 
+$('.refresh-captcha').click( function() {
+        captcha_refresh()
+}
+)
 
